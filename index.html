@@ -227,7 +227,7 @@
                   <button class="btn">
                     <img src="images/seat-green.png" alt="" />
                     <span class="text-[#1DD100]"
-                      ><span>8 </span>Seats left</span
+                      ><span id="seats-left">8</span> Seats left</span
                     >
                   </button>
                 </div>
@@ -278,7 +278,9 @@
         <div class="container mx-auto p-6 lg:p-12 font-raleway">
           <div class="flex flex-col lg:flex-row gap-10">
             <div class="flex flex-col gap-10 basis-1/2">
-              <h2 class="text-[#030712 ] text-2xl font-semibold font-raleway" >Select Your Seat</h2>
+              <h2 class="text-[#030712 ] text-2xl font-semibold font-raleway">
+                Select Your Seat
+              </h2>
               <div class="flex flex-col basis-full relative">
                 <div class="flex basis-full gap-5">
                   <button class="btn">
@@ -290,26 +292,33 @@
                     <span class="text-[#1DD100]">Available</span>
                   </button>
                 </div>
-                <div class="absolute -bottom-10 left-56 lg:-bottom-5 lg:left-56">
-                  <button class="btn"><i class="fa-regular fa-life-ring"></i></button>
-                  
+                <div
+                  class="absolute -bottom-10 left-56 lg:-bottom-5 lg:left-56"
+                >
+                  <button class="btn">
+                    <i class="fa-regular fa-life-ring"></i>
+                  </button>
                 </div>
               </div>
               <div class="flex gap-5 basis-full">
-                <button class="btn">A1</button>
-                <button class="btn">A2</button>
-                <button class="btn">A3</button>
-                <button class="btn">A4</button>
+                <button class="btn seat-number">A1</button>
+                <button class="btn seat-number">A2</button>
+                <button class="btn seat-number">A3</button>
+                <button class="btn seat-number">A4</button>
               </div>
               <div class="flex gap-5 basis-full">
-                <button class="btn">B1</button>
-                <button class="btn">B2</button>
-                <button class="btn">B3</button>
-                <button class="btn">B4</button>
+                <button class="btn seat-number">B1</button>
+                <button class="btn seat-number">B2</button>
+                <button class="btn seat-number">B3</button>
+                <button class="btn seat-number">B4</button>
               </div>
             </div>
-            <div class="flex flex-col basis-1/2 gap-10 items-center justify-center">
-              <h2 class="text-[#030712 ] text-2xl font-semibold font-raleway" >Select Your Seat</h2>
+            <div
+              class="flex flex-col basis-1/2 gap-10 items-center justify-start"
+            >
+              <h2 class="text-[#030712 ] text-2xl font-semibold font-raleway">
+                Select Your Seat
+              </h2>
               <div class="flex gap-10">
                 <p>Seats</p>
                 <p>Class</p>
