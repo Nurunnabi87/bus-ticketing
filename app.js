@@ -1,27 +1,3 @@
-// let selectedSeats = [];
-// function handleSeatClickedEvent(event) {
-//   const passengerPressed = event.target.innerText;
-//   console.log(passengerPressed);
-
-//   selectedSeats.push(passengerPressed);
-
-//   console.log(selectedSeats);
-// const currentSeatElement = document.getElementsByClassName("seat-number");
-
-// const currentSeat = currentSeatElement.innerText;
-// console.log(passengerPressed, currentSeat);
-// }
-
-// document.addEventListener("click", handleSeatClickedEvent);
-
-// const seatLeftElement = document.getElementById("seats-left");
-// const seatLeftInnerText = seatLeftElement.innerText;
-// const seatLeft = parseInt(seatLeftInnerText);
-// console.log(typeof seatLeft);
-
-// const newSeatLeft = seatLeft - 1;
-// seatLeftElement.innerText = newSeatLeft;
-
 const allSeat = document.getElementsByClassName("seat-number");
 
 let count = 0;
@@ -33,13 +9,51 @@ for (const seat of allSeat) {
     const seatLeft = parseInt(seatLeftInnerText);
     count = seatLeft - 1;
 
+    setInnerText("seat-left", count);
+  });
+}
+
+let initialSelectedSeat = 0;
+for (const seat of allSeat) {
+  seat.addEventListener("click", function (event) {
+    initialSelectedSeat = initialSelectedSeat + 1;
     const seatNumber = event.target.parentNode.childNodes[1].innerText;
     const perSeatPrice = 550;
-    const seatClass = "Economy"
-    setInnerText("seat-left", count);
+    const seatClass = "Economy";
 
-    console.log(seatNumber);
+    event.target.style.backgroundColor = "green";
+
+    const selectedContainer = document.getElementById(
+      "selected-place-container"
+    );
+    const li = document.createElement("li");
+    const p = document.createElement("p");
+    p.innerText = seatNumber;
+    const p2 = document.createElement("p");
+    p2.innerText = seatClass;
+    const p3 = document.createElement("p");
+    p3.innerText = perSeatPrice;
+    li.appendChild(p);
+    li.appendChild(p2);
+    li.appendChild(p3);
+    selectedContainer.appendChild(li);
+
+    totalPrice("total-price", parseInt(perSeatPrice));
+    grandTotal("grand-total", parseInt(perSeatPrice));
+    setInnerText("selected-seat", initialSelectedSeat);
   });
+}
+
+function totalPrice(id, value) {
+  const totalPrice = document.getElementById(id).innerText;
+  const convertedTotalCost = parseInt(totalPrice);
+  const sum = convertedTotalCost + parseInt(value);
+  setInnerText("total-price", sum);
+}
+function grandTotal() {
+  const totalPrice = document.getElementById("total-price").innerText;
+  const convertedTotalCost = parseInt(totalPrice);
+  setInnerText("grand-total", convertedTotalCost);
 }
 
 function setInnerText(id, value) {

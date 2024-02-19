@@ -25,15 +25,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      .font-raleway {
-        font-family: "Raleway", sans-serif;
-      }
-      .font-inter {
-        font-family: "Inter", sans-serif;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -301,16 +292,18 @@
                 </div>
               </div>
               <div class="flex gap-5 basis-full">
-                <button class="btn seat-number">A1</button>
-                <button class="btn seat-number">A2</button>
-                <button class="btn seat-number">A3</button>
-                <button class="btn seat-number">A4</button>
+                <button onclick="this.disabled = true" class="btn seat-number">
+                  A1
+                </button>
+                <button onclick="this.disabled = true" class="btn seat-number">A2</button>
+                <button onclick="this.disabled = true" class="btn seat-number">A3</button>
+                <button onclick="this.disabled = true" class="btn seat-number">A4</button>
               </div>
               <div class="flex gap-5 basis-full">
-                <button class="btn seat-number">B1</button>
-                <button class="btn seat-number">B2</button>
-                <button class="btn seat-number">B3</button>
-                <button class="btn seat-number">B4</button>
+                <button onclick="this.disabled = true" class="btn seat-number">B1</button>
+                <button onclick="this.disabled = true" class="btn seat-number">B2</button>
+                <button onclick="this.disabled = true" class="btn seat-number">B3</button>
+                <button onclick="this.disabled = true" class="btn seat-number">B4</button>
               </div>
             </div>
             <div
@@ -320,20 +313,36 @@
                 Select Your Seat
               </h2>
               <div class="flex gap-10">
-                <p>Seats</p>
+                <div>
+                  <p>
+                    Seats
+                    <span
+                      class="bg-[#1DD100] text-[#ffffff] p-1"
+                      id="selected-seat"
+                      >0</span
+                    >
+                  </p>
+                </div>
+
                 <p>Class</p>
                 <p>Price</p>
               </div>
+              <ul
+                id="selected-place-container"
+                class="selected-place-container flex flex-col gap-2"
+              ></ul>
               <div class="flex gap-20">
                 <p>Total Price</p>
-                <p>BDT 0</p>
+                <p>BDT <span id="total-price">0</span></p>
               </div>
               <div class="join">
                 <input
+                  id="input-field"
                   class="input input-bordered join-item"
-                  placeholder="Route"
+                  placeholder="Have any coupon?"
                 />
                 <button
+                  id="apply-btn"
                   class="btn join-item rounded-r-full text-[#FFFFFF] bg-[#1DD100]"
                 >
                   Apply
@@ -341,7 +350,7 @@
               </div>
               <div class="flex gap-20">
                 <p>Grand Total</p>
-                <p>BDT 0</p>
+                <p>BDT <span id="grand-total">0</span></p>
               </div>
               <div>
                 <button class="btn btn-wide bg-[#1DD100] text-[#FFFFFF]">
