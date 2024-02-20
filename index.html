@@ -267,13 +267,13 @@
       </section>
       <section id="select-seat">
         <div class="container mx-auto p-6 lg:p-12 font-raleway">
-          <div class="flex flex-col lg:flex-row gap-10">
-            <div class="flex flex-col gap-10 basis-1/2">
+          <div class="flex flex-col lg:flex-row gap-64 justify-between">
+            <div class="flex flex-col gap-10 items-center">
               <h2 class="text-[#030712 ] text-2xl font-semibold font-raleway">
                 Select Your Seat
               </h2>
-              <div class="flex flex-col basis-full relative">
-                <div class="flex basis-full gap-5">
+              <div class="flex flex-col basis-full  ">
+                <div class="flex basis-full gap-5 ">
                   <button class="btn">
                     <img src="images/seat-gray.png" alt="" />
                     <span class="text-[#03071280]">Available</span>
@@ -283,15 +283,17 @@
                     <span class="text-[#1DD100]">Available</span>
                   </button>
                 </div>
-                <div
-                  class="absolute -bottom-10 left-56 lg:-bottom-5 lg:left-56"
-                >
-                  <button class="btn">
-                    <i class="fa-regular fa-life-ring"></i>
-                  </button>
-                </div>
+
               </div>
+              <div
+              class="self-end"
+            >
+              <button class="btn">
+                <i class="fa-regular fa-life-ring"></i>
+              </button>
+            </div>
               <div class="flex gap-5 basis-full">
+                <h2 class="text-center pt-3">A</h2>
                 <button onclick="this.disabled = true" class="btn seat-number">
                   A1
                 </button>
@@ -300,6 +302,7 @@
                 <button onclick="this.disabled = true" class="btn seat-number">A4</button>
               </div>
               <div class="flex gap-5 basis-full">
+                <h2 class="text-center pt-3">B</h2>
                 <button onclick="this.disabled = true" class="btn seat-number">B1</button>
                 <button onclick="this.disabled = true" class="btn seat-number">B2</button>
                 <button onclick="this.disabled = true" class="btn seat-number">B3</button>
@@ -307,7 +310,7 @@
               </div>
             </div>
             <div
-              class="flex flex-col basis-1/2 gap-10 items-center justify-start"
+              class="flex flex-col gap-10"
             >
               <h2 class="text-[#030712 ] text-2xl font-semibold font-raleway">
                 Select Your Seat
@@ -367,9 +370,6 @@
     </div>
   </div>
 </dialog>
-                <!-- <button onclick="document.getElementById('my_modal_5').style.display='block'"  class="btn btn-wide bg-[#1DD100] text-[#FFFFFF]">
-                  Next
-                </button> -->
               </div>
             </div>
           </div>
